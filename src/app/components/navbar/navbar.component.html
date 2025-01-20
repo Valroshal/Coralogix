@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <button class="burger-menu" (click)="toggleMenu()">
+    &#9776; <!-- Hamburger icon -->
+  </button>
+  <ul [class.open]="menuOpen">
+    <li>
+      <a routerLink="/currency-converter" routerLinkActive="active">Currency Converter</a>
+    </li>
+    <li>
+      <a routerLink="/history" routerLinkActive="active">History</a>
+    </li>
+    <li>
+      <a routerLink="/chart" routerLinkActive="active">Chart</a>
+    </li>
+  </ul>
+</nav>

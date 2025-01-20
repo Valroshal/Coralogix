@@ -1,0 +1,73 @@
+<form #converterForm="ngForm" (ngSubmit)="convertCurrency()">
+    <h2>Currency Converter</h2>
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input
+        type="number"
+        id="amount"
+        name="amount"
+        class="form-control"
+        [(ngModel)]="amount"
+        (change)="onFieldChange()"
+        (input)="onFieldChange()"
+        #amountRef="ngModel"
+        required
+        min="0.01"
+        placeholder="Enter amount"
+      />
+      <div *ngIf="amountRef.invalid && amountRef.touched" class="error-message">
+        <small *ngIf="amountRef.errors?.['required']">Amount is required.</small>
+        <small *ngIf="amountRef.errors?.['min']">Amount must be greater than 0.</small>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="fromCurrency">From Currency</label>
+      <select
+        id="fromCurrency"
+        name="fromCurrency"
+        class="form-control"
+        [(ngModel)]="fromCurrency"
+        (change)="onFieldChange()"
+        #fromCurrencyRef="ngModel"
+        required
+      >
+        <option value="" disabled selected>Select a currency</option>
+        <option *ngFor="let currency of currencies" [value]="currency">
+          {{ currency }}
+        </option>
+      </select>
+      <div *ngIf="fromCurrencyRef.invalid && fromCurrencyRef.touched" class="error-message">
+        <small *ngIf="fromCurrencyRef.errors?.['required']">Please select a currency.</small>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="toCurrency">To Currency</label>
+      <select
+        id="toCurrency"
+        name="toCurrency"
+        class="form-control"
+        [(ngModel)]="toCurrency"
+        (change)="onFieldChange()"
+        #toCurrencyRef="ngModel"
+        required
+      >
+        <option value="" disabled selected>Select a currency</option>
+        <option *ngFor="let currency of currencies" [value]="currency">
+          {{ currency }}
+        </option>
+      </select>
+      <div *ngIf="toCurrencyRef.invalid && toCurrencyRef.touched" class="error-message">
+        <small *ngIf="toCurrencyRef.errors?.['required']">Please select a currency.</small>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="converterForm.invalid">Convert</button>
+  </form>
+  
+  <div *ngIf="result !== null" class="result">
+    <h3>Conversion Result</h3>
+    <p>{{ amount }} {{ fromCurrency }} = {{ result }} {{ toCurrency }}</p>
+  </div>
+  

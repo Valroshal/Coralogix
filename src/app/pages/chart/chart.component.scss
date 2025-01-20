@@ -1,0 +1,56 @@
+.chart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.input-container {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+@media (max-width: 500px) {
+    .input-container {
+        width: 300px;
+    }
+}
+
+h2 {
+    margin-bottom: 0;
+}
+  
+.form-group {
+    width: 100%;
+}
+  
+select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.chart-area {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    height: 48vh;
+}
+  
+canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+  
