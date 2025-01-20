@@ -1,59 +1,88 @@
 # CurrencyConverter
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.2.
+CurrencyConverter is a web application built with Angular to convert currencies, view historical exchange rates, 
+and visualize trends in currency exchange rates over the past week.
 
-## Development server
+## Features
 
-To start a local development server, run:
+This application consists of three main pages:
+
+### 1. **Currency Converter**
+   - A user-friendly page where you can:
+     - Enter an amount in the base currency.
+     - Select the base and target currencies.
+     - View the converted result instantly.
+   - Includes validation to ensure the inputs are correct.
+
+### 2. **History**
+   - Displays the history of your currency conversion transactions.
+   - Conversion history is stored locally using `localStorage` and persists even after the app is refreshed.
+
+### 3. **Chart**
+   - Visualizes currency trends over the past week using a line chart.
+   - Allows users to:
+     - Select a base currency.
+     - Select a target currency.
+   - The chart dynamically updates based on the selected currencies, showing how the exchange rate changed over time.
+
+## Packages Used
+
+The following packages and libraries were used to build the application:
+
+1. **Angular**
+   - Framework used to build the application.
+
+2. **RxJS**
+   - Used for managing asynchronous data streams, such as HTTP requests to fetch currency exchange rates.
+
+3. **ng2-charts**
+   - A lightweight wrapper around Chart.js to create interactive charts.
+   - Used in the **Chart** page to display currency trends.
+
+4. **Chart.js**
+   - A JavaScript library used for creating charts and graphs.
+   - Provides the core functionality for rendering the line chart in the **Chart** page.
+
+5. **Bootstrap (CSS only)**
+   - Provides basic styling for the app's UI components.
+   - Helps with responsive design.
+
+
+---
+
+## Note on the Select Component
+
+The `Select` component was initially intended to be a reusable, general-purpose dropdown component. However, due to time constraints, it was implemented specifically for the needs of this project and is not entirely generalized. Future updates may include enhancements to make it more reusable for other contexts.
+
+---
+
+## How to Run the Project Locally
+
+1. Clone the repository:
+   
+```bash
+git clone https://github.com/Valroshal/Coralogix.git
+```
+2. Navigate to the project directory:
+
+```bash
+cd currency-converter
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Run the development server:
 
 ```bash
 ng serve
 ```
+Open http://localhost:4200 in your browser.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## How to Access the Deployed App
 
-## Code scaffolding
+https://valroshal.github.io/Coralogix/browser 
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
